@@ -109,7 +109,7 @@ const MyPlanPage = () => {
                   : "text-neutral-400 hover:text-white"
               }`}
             >
-              Today's Plan ({addPlan.length})
+              Today`s Plan ({addPlan.length})
             </button>
             <button
               onClick={() => setActiveTab("saved")}
@@ -137,7 +137,6 @@ const MyPlanPage = () => {
           </div>
         </div>
 
-        {/* Workout Lists Grid */}
         <div className="mt-6">
           {activeTab === "today" ? (
             sortedPlan.length > 0 ? (

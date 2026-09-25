@@ -1,4 +1,3 @@
-// types/workout.ts
 
 export interface Workout {
   id: number;

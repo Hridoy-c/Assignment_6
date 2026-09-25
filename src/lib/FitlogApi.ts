@@ -2,7 +2,6 @@ import { Workout } from "@/types/FitlogType";
 
 
 
-// All workouts: throws on failure so the UI can show an error state
 export const getFitlog = async (): Promise<Workout[]> => {
   try {
     const response = await fetch('https://api.abcz.workers.dev/api/fitlog');
