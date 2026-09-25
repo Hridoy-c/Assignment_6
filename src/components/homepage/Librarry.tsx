@@ -1,5 +1,4 @@
 import { getFitlog } from '@/lib/FitlogApi';
-import React from 'react'
 import FitlogCard from '../shared/FitlogCard';
 
 

@@ -3,9 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
+import { WorkoutContext } from "@/context/WorkoutContext";
 
 const navLinks = [
   { label: "Workout", href: "/" },
@@ -16,10 +17,9 @@ const Navbar = () => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
-  const planCount = 0;
-  const savedCount = 0;
+  const { addPlan , savePlan} = useContext(WorkoutContext);
 
-  // "/" is also active on workout detail pages (/workout/3)
+
   const isActive = (href: string) =>
     href === "/"
       ? pathname === "/" || pathname.startsWith("/workout")
@@ -62,14 +62,14 @@ const Navbar = () => {
           <Link href="/my-plan" className="flex items-center gap-2 text-sm text-zinc-300">
             <span className="hidden sm:inline">Plan</span>
             <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-[#ccff00] px-1.5 text-xs font-bold text-black">
-              {planCount}
+              {addPlan.length}
             </span>
           </Link>
 
           <Link href="/my-plan" className="flex items-center gap-2 text-sm text-zinc-400">
             <span className="hidden sm:inline">Saved</span>
             <span className="flex h-5 min-w-5 items-center justify-center rounded-full border border-zinc-700 px-1.5 text-xs text-zinc-300">
-              {savedCount}
+             {savePlan.length}
             </span>
           </Link>
 

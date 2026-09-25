@@ -1,4 +1,3 @@
-// components/FitlogCard.tsx
 import Image from "next/image";
 import Link from "next/link";
 import { Clock, Flame, Star } from "lucide-react";

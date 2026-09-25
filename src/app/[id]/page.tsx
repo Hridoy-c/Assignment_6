@@ -1,8 +1,8 @@
-// src/app/workout/[id]/page.tsx
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { CalendarPlus, Bookmark } from "lucide-react";
 import { getFitlog } from "@/lib/FitlogApi";
+
+import DetailActions from "@/components/myplanpage/DetailActions";
 
 const FitLogDetailsPage = async ({
   params,
@@ -29,8 +29,7 @@ const FitLogDetailsPage = async ({
   return (
     <section className="px-4 py-8 sm:px-6 lg:px-8">
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
-
-        <div className="relative h-[50vh] w-full overflow-hidden rounded-2xl border border-[#292d33] bg-[#15181e] sm:h-[70vh] lg:h-[90vh]">
+        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-[#292d33] bg-[#15181e] sm:aspect-[4/3] lg:aspect-auto lg:h-full lg:max-h-[90vh]">
           <Image
             src={workout.image}
             alt={workout.name}
@@ -41,9 +40,8 @@ const FitLogDetailsPage = async ({
           />
         </div>
 
-        
         <div>
-          <h1 className="font-oswald text-4xl font-bold uppercase leading-tight text-white sm:text-5xl">
+          <h1 className="font-oswald text-3xl font-bold uppercase leading-tight text-white sm:text-4xl lg:text-5xl">
             {workout.name}
           </h1>
 
@@ -51,36 +49,32 @@ const FitLogDetailsPage = async ({
             {workout.description}
           </p>
 
-       
-          <div className="mt-4 flex flex-wrap gap-2">
+          <ul className="mt-4 flex flex-wrap gap-2">
             {workout.muscleGroups.map((group) => (
-              <span
-                key={group}
-                className="rounded-full bg-[#ccff00] px-3 py-1 text-xs font-bold text-black"
-              >
-                {group}
-              </span>
+              <li key={group}>
+                <span className="rounded-full bg-[#ccff00] px-3 py-1 text-xs font-bold text-black">
+                  {group}
+                </span>
+              </li>
             ))}
-          </div>
+          </ul>
 
-         
-          <div className="mt-8 overflow-hidden rounded-2xl border border-[#292d33] bg-[#15181e]">
+          <dl className="mt-8 overflow-hidden rounded-2xl border border-[#292d33] bg-[#15181e]">
             {specs.map((spec, i) => (
               <div
                 key={spec.label}
-                className={`flex items-center justify-between px-6 py-4 text-sm ${
+                className={`flex items-center justify-between px-4 py-4 text-sm sm:px-6 ${
                   i !== 0 ? "border-t border-[#292d33]" : ""
                 }`}
               >
-                <span className="text-xs font-bold uppercase tracking-wider text-[#9ca3af]">
+                <dt className="text-xs font-bold uppercase tracking-wider text-[#9ca3af]">
                   {spec.label}
-                </span>
-                <span className="text-white">{spec.value}</span>
+                </dt>
+                <dd className="text-white">{spec.value}</dd>
               </div>
             ))}
-          </div>
+          </dl>
 
-       
           <h2 className="mt-10 text-base font-extrabold uppercase tracking-wide text-white">
             Instructions
           </h2>
@@ -93,17 +87,8 @@ const FitLogDetailsPage = async ({
             ))}
           </ol>
 
-
           <div className="mt-8 flex flex-wrap gap-3">
-            <button className="inline-flex items-center gap-2 rounded-lg bg-[#ccff00] px-6 py-3 text-sm font-bold text-black transition hover:bg-[#b9eb00] active:scale-95">
-              <CalendarPlus size={18} />
-              Add to today&apos;s plan
-            </button>
-
-            <button className="inline-flex items-center gap-2 rounded-lg border border-[#3a3f47] px-6 py-3 text-sm font-medium text-white transition hover:border-[#ccff00]/60 active:scale-95">
-              <Bookmark size={18} />
-              Save for later
-            </button>
+           <DetailActions workout={workout} />
           </div>
         </div>
       </div>
