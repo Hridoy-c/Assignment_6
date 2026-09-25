@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏋️‍♂️ FitLog
 
-## Getting Started
+### 📝 Short Description
+FitLog is a dark, no-nonsense gym companion app designed to help you train with intent. It allows users to browse a comprehensive library of exercises, add up to five specific lifts to their daily timeline, save workouts for later tracking, and monitor cumulative performance metrics like total minutes and calories in real time.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🛠️ Technologies to Use
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+| Technology | Purpose |
+| :--- | :--- |
+| **Next.js** | Build the UI |
+| **App Router (Next.js)** | Handle page navigation |
+| **Tailwind CSS** | Styling and responsiveness |
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🌟 5 Key Features of the Project
 
-## Learn More
+1. **Live Synchronized Navigation Counter Badges**
+   * The navigation header dynamically tracks your workout arrays. The "Plan" badge shows as a filled accent pill (`#ccff00`) and the "Saved" badge renders as a clean outline pill, adjusting numbers instantly as changes happen.
 
-To learn more about Next.js, take a look at the following resources:
+2. **Real-Time Dynamic Metrics Summary Panel**
+   * The system aggregates your total scheduled workload in real time. It calculates total Exercise count, active training Minutes, and total Calories Burned, adjusting metrics contextually depending on which tab view is active.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Strict Volume Control (5-Lift Daily Cap Constraint)**
+   * To prevent over-training and maintain log honesty, the daily plan enforces a limit of five exercises. Once the cap is hit, the primary action button safely disables to regulate workflow.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. **Multi-Criteria Filter List Sorting**
+   * Includes a fully integrated dropdown component to re-sort lists by Duration, Calories Burned, or User Rating, allowing you to instantly organize exercises without experiencing page flashes.
 
-## Deploy on Vercel
+5. **Cross-Platform Responsive Layout Optimization**
+   * Engineered to perform elegantly on any viewport. The interface adapts instantly, converting wide multi-column layout components into stacked, mobile-friendly interactive elements designed for gym use.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+© 2026 FitLog — Workout Library. Train hard, log honest.
