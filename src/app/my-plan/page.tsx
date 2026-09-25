@@ -70,7 +70,7 @@ const MyPlanPage = () => {
 
   return (
     <section className="min-h-screen bg-[#0b0d0f] text-white px-4 py-8 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto w-[90vw]">
 
         <div className="text-center sm:text-left">
           <h1 className="font-oswald text-3xl font-bold uppercase tracking-wider text-neutral-100">My Plan</h1>
@@ -99,7 +99,7 @@ const MyPlanPage = () => {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row sm:justify-between border-b border-neutral-800/40 pb-4">
+        <div className="mt-19 flex flex-col items-center justify-center gap-4 sm:flex-row sm:justify-between border-b border-neutral-800/40 pb-4">
           <div className="flex gap-2 bg-[#121417] p-1 rounded-xl border border-neutral-800/40 w-fit">
             <button
               onClick={() => setActiveTab("today")}
@@ -123,7 +123,7 @@ const MyPlanPage = () => {
             </button>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex pb-9  items-center gap-2">
             <span className="text-xs font-medium text-neutral-400">Sort By</span>
             <select
               value={sortBy}
@@ -137,7 +137,7 @@ const MyPlanPage = () => {
           </div>
         </div>
 
-        <div className="mt-6">
+        <div className="mt-8">
           {activeTab === "today" ? (
             sortedPlan.length > 0 ? (
               <div className="space-y-4">
