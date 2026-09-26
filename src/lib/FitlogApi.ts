@@ -1,10 +1,10 @@
 import { Workout } from "@/types/FitlogType";
 
-
-
 export const getFitlog = async (): Promise<Workout[]> => {
   try {
-    const response = await fetch('https://api.abcz.workers.dev/api/fitlog');
+    const response = await fetch('https://api.api-store.workers.dev/api/fitlog', {
+      next: { revalidate: 60 },
+    });
     if (!response.ok) {
       throw new Error(`Request failed with status ${response.status}`);
     }

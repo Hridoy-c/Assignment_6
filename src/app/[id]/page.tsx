@@ -4,6 +4,7 @@ import { getFitlog } from "@/lib/FitlogApi";
 
 import DetailActions from "@/components/myplanpage/DetailActions";
 
+
 const FitLogDetailsPage = async ({
   params,
 }: {
